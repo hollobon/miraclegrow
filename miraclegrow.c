@@ -1,7 +1,10 @@
-/*
+/* ex: set tabstop=4:  -*- tab-width: 4; -*-
+ *
  * CGV Open Examination 2000
  *
  * Candidate Number: xxxxx
+ *
+ * Copyright Peter Hollobon 2000-2015
  */
  
 #include <stdlib.h>
