@@ -14,7 +14,7 @@ CFLAGS  =  -O3 -funroll-loops -ffast-math -D_SVID_SOURCE -D_BSD_SOURCE -I/usr/X1
 
 MAKELIB = $(MESA)/mklib.ar-ruv
 
-XLIBS = -L/usr/X11/lib -L/usr/X11R6/lib -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE
+XLIBS = -L/usr/X11/lib -L/usr/X11R6/lib -lX11 -lXext -lSM -lICE
 
 MESA	= /usr/local
 
@@ -24,7 +24,14 @@ GL_LIBS = -L $(MESA)/lib -lglut -lGLU -lGL -lm $(XLIBS)
 
 LIB_DEP = $(MESA)/lib/$(GL_LIB) $(MESA)/lib/$(GLU_LIB) $(MESA)/lib/$(GLUT_LIB)
 
+OBJECTS = miraclegrow.o
+HEADERS = leaf.h
+
+default: miraclegrow
 
 #Rules
-.c: Makefile $(LIB_DEP)
-	/usr/bin/gcc $(INCDIRS) $(CFLAGS) $< $(GL_LIBS) 
+%.o: %.c $(HEADERS)
+	/usr/bin/gcc -c $(INCDIRS) $(CFLAGS) $< -o $@
+
+miraclegrow: $(OBJECTS)
+	gcc $(OBJECTS) $(GL_LIBS) -o $@
