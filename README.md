@@ -8,3 +8,5 @@ Purely for historical interest; I'm sure things have moved on a lot.
 The animation runs way too fast; it was written on a 133Mhz Pentium, if memory serves correctly.
 
 ![Screenshot](https://github.com/hollobon/miraclegrow/raw/master/miraclegrow.png "Screenshot")
+
+Video: https://youtu.be/Hc_y-WPLBHk
